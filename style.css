@@ -1,0 +1,46 @@
+/* Import Inter Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Custom Gradients if needed, mostly handled by Tailwind */
+.gradient-blue {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #1e3a8a, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- ANIMATION UTILITIES (Replaces Framer Motion) --- */
+/* Base class for elements to be animated */
+.animate-on-scroll {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+/* Active State (Visible) */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* Fade Up Effect (Default) */
+[data-animation="fade-up"] {
+    transform: translateY(30px);
+}
+
+/* Fade Right Effect (For Hero Text) */
+[data-animation="fade-right"] {
+    transform: translateX(-50px);
+}
+
+/* Scale Up Effect (For Stats) */
+[data-animation="scale-up"] {
+    transform: scale(0.9);
+}
